@@ -1,12 +1,13 @@
 import React from 'react';
 import "./coffee.css"
-export default function AddresAndAmount() {
+import shortenAddress from "./utils/shortenAdress" 
+export default function AddresAndAmount(props) {
     return (
         <div className="address-amount">
             <div className="my-text" >
                 <div className="module-border-wrap">
                     <div className="module">
-                        <div style={{ "display": "inline-block" }}>Adress : 0xcf...7d65</div>
+                        <div style={{ "display": "inline-block" }}>Adress: {shortenAddress(props.addres.toLowerCase())}</div>
                     </div>
                 </div>
             </div>
@@ -14,7 +15,7 @@ export default function AddresAndAmount() {
             <div className="my-text">
                 <div className="module-border-wrap">
                     <div className="module">
-                        <div style={{ "display": "inline-block" }}>Balance: 0.061577</div>
+                        <div style={{ "display": "inline-block" }}>Balance: {props.balance.slice(0,8)}</div>
                     </div>
                 </div>
             </div>

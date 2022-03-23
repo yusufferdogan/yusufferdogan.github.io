@@ -1,11 +1,20 @@
 .coffee-body {
   margin-bottom: 50%;
+  justify-content: center;
 }
+
 .address-amount {
   margin-left: 20%;
   margin-right: 20%;
   display: flex;
   justify-content: center;
+}
+
+.amount-input{
+  margin-left: 27%;
+  margin-right: 27%;
+  margin-top: 2rem;
+  width: 20rem;
 }
 
 .my-body {
@@ -50,4 +59,12 @@ hr {
 
 .inner-icons {
   padding: 0 15px;
+}
+
+input, select, textarea{
+  color: #ff0000;
+}
+
+textarea:focus, input:focus {
+  color: #ff0000;
 }

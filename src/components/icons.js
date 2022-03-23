@@ -43,13 +43,13 @@ export default function icons() {
                 <i className="fab fa-whatsapp fa-2x" style={{ color: "#24cf62" }}></i>
             </a>
 
-            <a href="https://twitter.com/" role="button" className={"inner-icons"}>
-                <i className="fab fa-phone fa-2x" style={{ color: "white" }}></i>
+            {/* <a href="https://twitter.com/" role="button" className={"inner-icons"}>
+                <i className="fab fa-phone-hangup fa-2x" style={{ color: "white" }}></i>
             </a>
 
             <a href="https://twitter.com/" role="button" className={"inner-icons"}>
                 <i className="fab fa-envelope fa-2x" style={{ color: "white" }}></i>
-            </a>
+            </a> */}
         </div>
     );
 }
