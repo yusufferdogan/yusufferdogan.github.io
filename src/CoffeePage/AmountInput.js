@@ -1,7 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-
 export default function AmountInput(props) {
     return (
         <div className="form-outline amount-input ">
@@ -15,11 +14,12 @@ export default function AmountInput(props) {
                     counterColor: "white"
                 }}
             />
-            <div style={{ display: "inline-block", }}>
+            <div style={{ display: "inline-block", justifyContent: "center" }}>
                 <label className="form-label"
                     style={{ color: props.color, fontSize: "0.8rem" }} htmlFor="form16">{props.error}</label>
                 <span className="input-count"
-                    style={{ color: props.color, fontSize: "0.8rem", marginLeft: "0.3rem" }}>
+                    style={{ color: props.color, fontSize: "0.8rem", 
+                    marginLeft: "0.3rem", marginRight: "1", marginTop: "0.3rem" }}>
                     {props.input.length} / 8</span>
             </div>
         </div>

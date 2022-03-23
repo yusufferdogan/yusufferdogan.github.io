@@ -4,15 +4,15 @@
 }
 
 .address-amount {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
   display: flex;
   justify-content: center;
 }
 
 .amount-input{
-  margin-left: 27%;
-  margin-right: 27%;
+  margin-left: 8.5rem;
+  margin-right: 3rem;
   margin-top: 2rem;
   width: 20rem;
 }
@@ -34,14 +34,15 @@
     rgba(102, 126, 234, 0.5),
     rgba(118, 75, 162, 0.5)
   );
-  padding: 3px;
+  padding: 0.25rem;
 }
 
 .module {
   position: relative;
   background: #222;
   color: white;
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 0.6rem;
+  /* justify-content: ; */
 }
 
 hr {

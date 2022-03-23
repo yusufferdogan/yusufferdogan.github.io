@@ -1,11 +1,10 @@
 // import * as abi from "./abi/abi"
 import Web3 from "web3";
-const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
 // const web3 = new Web3(window.ethereum);
 const { ethereum } = window;
 
-
-export default async function getAccountBalance(accountAdress, unit = 'ether') {
+export async function getAccountBalance(accountAdress, unit = 'ether') {
     let balance = await web3.eth.getBalance(accountAdress);
     return balance;
 }
