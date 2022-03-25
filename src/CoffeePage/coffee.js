@@ -6,7 +6,7 @@ import ConnectButton from './connectButton'
 import AmountInput from './AmountInput'
 import SendButton from '../components/sendButton'
 import * as web3Lib from "../web3-lib/web3Lib"
-import { MDBBtn } from 'mdbreact';
+
 import Web3 from 'web3';
 const { ethereum } = window;
 
@@ -22,8 +22,17 @@ export default function CoffeeComponent(props) {
     const [address, setAddress] = useState('');
     const [balance, setBalance] = useState(0);
 
+    ethereum.on('accountsChanged', (accounts) => {
+        setConnectClicked(true);
+    });
+
+    ethereum.on('chainChanged', (chainId) => {
+        setConnectClicked(true);
+    });
+
     useEffect(() => {
         async function load() {
+
             if (!ethereum) {
                 if (window.confirm('Please install Metamask')) {
                     window.location.href = 'https://metamask.io/download/';
@@ -31,6 +40,8 @@ export default function CoffeeComponent(props) {
             }
             const accounts = await web3.eth.requestAccounts();
             const _balance = await web3Lib.getAccountBalance(accounts[0]);
+            const _network = await web3.eth.net.getNetworkType();
+            console.log(_network);
             setAddress(accounts[0]);
             setBalance(_balance);
         }
@@ -90,8 +101,11 @@ export default function CoffeeComponent(props) {
                     <ConnectButton onClick={() => setDisconnectClicked(true)}
                         title="DISCONNECT TO METAMASK"></ConnectButton>
                 </div>
+                <div style={{ color: "white" }}>Note: All chains are supported. (Including Testnets for testing this feature.) </div>
                 <hr></hr>
                 <Icons></Icons>
+                <hr></hr>
+                <div style={{ color: "white" }}> 2022 - Ahmet Yusuf Erdoğan</div>
             </div>
         );
     }

@@ -19,7 +19,7 @@ export default function AmountInput(props) {
                     style={{ color: props.color, fontSize: "0.8rem" }} htmlFor="form16">{props.error}</label>
                 <span className="input-count"
                     style={{ color: props.color, fontSize: "0.8rem", 
-                    marginLeft: "0.3rem", marginRight: "1", marginTop: "0.3rem" }}>
+                    marginLeft: "0.3rem", marginTop: "0.3rem" }}>
                     {props.input.length} / 8</span>
             </div>
         </div>
