@@ -22,13 +22,15 @@ export default function CoffeeComponent(props) {
     const [address, setAddress] = useState('');
     const [balance, setBalance] = useState(0);
 
-    ethereum.on('accountsChanged', (accounts) => {
-        setConnectClicked(true);
-    });
+    if (ethereum) {
+        ethereum.on('accountsChanged', (accounts) => {
+            setConnectClicked(true);
+        });
 
-    ethereum.on('chainChanged', (chainId) => {
-        setConnectClicked(true);
-    });
+        ethereum.on('chainChanged', (chainId) => {
+            setConnectClicked(true);
+        });
+    }
 
     useEffect(() => {
         async function load() {
@@ -89,14 +91,14 @@ export default function CoffeeComponent(props) {
 
     if (connected) {
         return (
-            <div className="coffee-body" style={{marginTop:"12rem"}}>
-                <AddresAndAmount addres={address} 
+            <div className="coffee-body" style={{ marginTop: "12rem" }}>
+                <AddresAndAmount addres={address}
                     balance={web3Lib.weiToEther(balance)}></AddresAndAmount>
                 <AmountInput input={input} error={error} color={color} setInput={setInput}></AmountInput>
                 <div >
-                    <SendButton 
-                    onClick = {() => web3Lib.sendTransaction(address,myAddress,web3Lib.etherToWei(input))}
-                        disabled = {error.length > 0}
+                    <SendButton
+                        onClick={() => web3Lib.sendTransaction(address, myAddress, web3Lib.etherToWei(input))}
+                        disabled={error.length > 0}
                     ></SendButton>
                     <ConnectButton onClick={() => setDisconnectClicked(true)}
                         title="DISCONNECT TO METAMASK"></ConnectButton>
