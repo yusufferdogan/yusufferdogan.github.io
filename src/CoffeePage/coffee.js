@@ -118,6 +118,8 @@ export default function CoffeeComponent(props) {
                     title="CONNECT TO METAMASK"></ConnectButton>
                 <hr></hr>
                 <Icons></Icons>
+                <hr></hr>
+                <div style={{ color: "white" }}> 2022 - Ahmet Yusuf Erdoğan</div>
             </div>
         );
     }
