@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./coffee.css"
 import Icons from "../components/icons"
 import AddresAndAmount from './AddressAndAmount'
-import ConnectButton from './connectButton'
+import ConnectButton from '../components/connectButton'
 import AmountInput from './AmountInput'
 import SendButton from '../components/sendButton'
 import * as web3Lib from "../web3-lib/web3Lib"
